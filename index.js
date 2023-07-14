@@ -6,11 +6,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 
 // import routers
-
 const userRoute = require("./routers/users");
 const authRouter = require("./routers/auth");
-
-const router = require("express").Router();
 
 dotenv.config();
 
@@ -20,10 +17,11 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(express.json());
 
-app.get("/", (req, res)=> {
-  res.send("hello!")
-})
+app.get("/", (req, res) => {
+  res.send("hello!");
+});
 
+// routers
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRouter);
 
