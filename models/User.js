@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UserSchema =  new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     require: true,
@@ -25,6 +25,21 @@ const UserSchema =  new mongoose.Schema({
     default: ""
   },
   followers: {
-    type
+    type: Array,
+  },
+
+  following: {
+    type: Array,
+    default:[]
+  },
+  isAdmin: {
+    type: Boolean,
+    default:  false,
   }
-})
+
+
+},
+{ timestamps: true }
+);
+
+module.exports = mongoose.model("User", UserSchema);
