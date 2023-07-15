@@ -9,6 +9,7 @@ const router = express.Router();
 // register
 router.post('/register', async (req, res) => {
  
+
  
 
   try {
@@ -67,10 +68,7 @@ router.post("/login", async(req, res) => {
    !validPassword && res.status(400).json("Invalid password");
 
   
-   res.status(200).json(user)
-
- 
-   
+   res.status(200).json(user);
    } 
   
  catch(err){
