@@ -9,6 +9,7 @@ const router = express.Router();
 // register
 router.post('/register', async (req, res) => {
  
+
  
 
   try {
@@ -20,6 +21,18 @@ router.post('/register', async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
+      profilePicture: req.body.profilePicture,
+      followers: req.body.followers,
+      following: req.body.following,
+      isAdmin: req.body.isAdmin,
+      description: req.body.description,
+      city: req.body.city,
+      from: req.body.from,
+      relationships: req.body.relationships,
+
+  
+   
+   
     });
 
     const user = await newUser.save();
@@ -55,10 +68,7 @@ router.post("/login", async(req, res) => {
    !validPassword && res.status(400).json("Invalid password");
 
   
-   res.status(200).json(user)
-
- 
-   
+   res.status(200).json(user);
    } 
   
  catch(err){

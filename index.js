@@ -8,6 +8,8 @@ const morgan = require("morgan");
 // import routers
 const userRoute = require("./routers/users");
 const authRouter = require("./routers/auth");
+const postRouter = require("./routers/posts");
+
 
 dotenv.config();
 
@@ -24,6 +26,7 @@ app.get("/", (req, res) => {
 // routers
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
 
 app.listen(8800, () => {
   console.log("Backend server is running");
