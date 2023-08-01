@@ -58,7 +58,7 @@ else{
 );
 
 
-// to follow
+// to  follow 
 
 router.put("/:id/follow", async (req,res)=>{
   if(req.body.userId !== req.params.id){ //if is not the own user 
